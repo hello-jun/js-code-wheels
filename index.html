@@ -4,24 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>js-code-wheels</title>
+    <style>
+        .completed{
+            color: green;   
+        }
+        .unfinished{
+            color:chocolate;
+        }  
+    </style>
 </head>
 <body>
     <div>
         <ul>
-            <li>"继承"</li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
+            <li class="completed">"继承"</li>
+            <li class="unfinished">防抖以及防抖升级版</li>
+            <li class="unfinished">节流以及节流升级版</li>
+            <li class="unfinished">生成器以及迭代器</li>
+            <li class="unfinished">for...of</li>
+            <li class="unfinished">Object.create()</li>
+            <li class="unfinished">深拷贝</li>
+            <li class="unfinished">排序算法</li>
+        </ul>   
     </div>
-    <script src="./src/inherit/index_class.js"></script>
+    <script src="./src/inherit/inherit_class.js"></script>
+    <script src="./src/inherit/inherit_es5.js"></script>
     <script>
-        let b = new B('Juliyor',18)
-        console.log(b)
+        let b1 = new B1('Juliyor',18)
+        let b2 = new B2('Juliyor',18)
+        console.log(b1)
+        console.log(b2)
     </script>
 </body>
 </html>
