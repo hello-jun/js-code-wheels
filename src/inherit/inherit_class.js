@@ -2,6 +2,7 @@ class A1 {
     constructor(name) {
         this.name = name
     }
+    static life = '100'
     showName() {
         console.log('show Name ', this.name)
     }
