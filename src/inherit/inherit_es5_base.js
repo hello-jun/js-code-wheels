@@ -14,9 +14,10 @@ function B2(name, age) {
     A2.call(this,name)
     this.age = age
 }
-// 使用此API直接更改原型会影响性能，但好处是不会丢失 constructor
-// 也可以使用 Object.create 将B2 原型委托到新创建的对象上，但是需要重新指定 constructor
-Object.setPrototypeOf(B2.prototype,A2.prototype)
+
 B2.prototype.showAge = function () {
     console.log('show Age ', this.age)
 }
+// 使用此API直接更改原型会影响性能，但好处是不会丢失 constructor
+// 也可以使用 Object.create 将B2 原型委托到新创建的对象上，但是需要重新指定 constructor
+Object.setPrototypeOf(B2.prototype,A2.prototype)
