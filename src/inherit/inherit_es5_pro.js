@@ -42,12 +42,14 @@ function extend(target,source){
 
     srcProps.length && srcProps.forEach(prop=>{
         if (typeof target[prop] === 'undefined') {
-            target[prop] = source[prop]
+            Object.defineProperty(target,prop,Object.getOwnPropertyDescriptor(source,prop))
+            // target[prop] = source[prop]
         }
     })
     srcSymbols.length && srcSymbols.forEach(symbol=>{
         if (typeof target[symbol] === 'undefined') {
-            target[symbol] = source[symbol]
+            Object.defineProperty(target,symbol,Object.getOwnPropertyDescriptor(source,symbol))
+            // target[symbol] = source[symbol]
         }
     })
 
@@ -55,7 +57,8 @@ function extend(target,source){
     target.prototype.constructor = target
 
     targetProtoPropNames.length && targetProtoPropNames.forEach(prop=>{
-        target.prototype[prop]=targetProtoProps[prop]
+        Object.defineProperty(target.prototype,prop,Object.getOwnPropertyDescriptor(targetProtoProps,prop))
+        // target.prototype[prop]=targetProtoProps[prop]
     })
 }
 
