@@ -9,6 +9,8 @@ A2.prototype.showName = function () {
 
 // A2 上的属性（理解为class中的静态属性）并不会被B2继承，这是此方案的遗漏点
 A2.life = '100'
+// A2 上的Symbol 属性
+A2[sbKey] = 'sbKey'
 
 function B2(name, age) {
     A2.call(this,name)

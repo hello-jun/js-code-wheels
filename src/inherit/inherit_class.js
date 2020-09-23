@@ -3,6 +3,7 @@ class A1 {
         this.name = name
     }
     static life = '100'
+    static [sbKey] = 'sbKey'
     showName() {
         console.log('show Name ', this.name)
     }

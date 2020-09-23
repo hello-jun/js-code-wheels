@@ -7,8 +7,10 @@ A3.prototype.showName = function () {
     console.log('show Name ', this.name)
 }
 
-// A3 上的属性（理解为class中的静态属性
+// A3 上的属性 ( 理解为class中的静态属性 )
 A3.life = '100'
+// A3 上的Symbol 属性
+A3[sbKey] = 'sbKey' 
 
 function B3(name, age) {
     A3.call(this,name)
