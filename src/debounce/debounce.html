@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>防抖</title>
+</head>
+<body>
+    <span>防抖</span>
+    <script src="./debounce_base.js"></script>
+    <script src="./debounce_pro.js"></script>
+    <script>
+        function showTime() {
+            console.log(Date.now(),this.name)
+        }
+        const executorBase = debounceBase(showTime)
+        const executorPro = debouncePro(showTime,500,{name:'Juliyor'})
+        setInterval(executorBase,600)
+        setInterval(executorPro,600)
+    </script>
+</body>
+</html>
