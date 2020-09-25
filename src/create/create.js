@@ -9,15 +9,24 @@ Return obj.
 规范地址：https://www.ecma-international.org/ecma-262/5.1/#sec-15.2.3.5  ES5新增
 */
 
-// Attention： 此处代码并非 polyfill, 仅基于>=ES5实现 create
+// Attention： 此处代码并非 Polyfill, 仅基于>=ES5实现 create . Polifill 代码请见 https://github.com/es-shims/es5-shim/blob/master/es5-sham.js  或者 https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/create
 if (typeof Object.create !== 'function') {
-    Object.create = function create(prototype,propertiesObject) {
-        if (typeof prototype !== 'function' && typeof prototype !== 'object') {
+    Object.create = function create(proto,propertiesObject) {
+        if (typeof proto !== 'function' && typeof proto !== 'object') {
             throw new TypeError('第一个参数类型必须是 Object 或者 Null')
         }
         let obj
         function Type(){}
-        
-
+        if (proto === null) {
+            obj = new Type()
+            obj.__proto__ = null
+        } else {
+            Type.prototype = proto
+            obj = new Type()
+        }
+        if (typeof propertiesObject !=='undefined') {
+            Object.defineProperties(obj,propertiesObject)
+        }
+        return obj
     }
 }

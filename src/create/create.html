@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object.create()</title>
+</head>
+
+<body>
+    <span>Object.create() 方法实现</span>
+    <script>
+        // 取消原生的 create 方法
+        Object.create = null
+    </script>
+    <script src="./create.js"></script>
+    <script>
+        const proto = {
+            age: 18
+        }
+        const foo = Object.create(proto, { name: { value: 'Juliyor' } })
+        console.log(foo)
+    </script>
+</body>
+
+</html>
