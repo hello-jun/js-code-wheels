@@ -6,6 +6,19 @@
     <title>防抖</title>
 </head>
 <body>
-    
+    <label for="throttleBtn1">时间戳实现：</label>
+    <button id="throttleBtn1">使劲点我</button>
+    <br>
+    <label for="throttleBtn2">定时器实现：</label>
+    <button id="throttleBtn2">使劲点我</button>
+    <script src="./throttle.js"></script>
+    <script src="./throttle_timer.js"></script>
+    <script>
+        function showTime(e) {
+            console.log(Date.now(),e,this)
+        }
+        throttleBtn1.addEventListener('click',throttle(showTime))
+        throttleBtn2.addEventListener('click',throttleTimer(showTime))
+    </script>
 </body>
 </html>
