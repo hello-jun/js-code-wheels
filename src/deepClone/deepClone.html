@@ -6,6 +6,16 @@
     <title>深拷贝</title>
 </head>
 <body>
-    
+    <script src="./deepClone_base.js"></script>
+    <script>
+        const dpc1 = {name:'zj',food:{meat:'pig',water:8},wife:{name:'july',age:23},cars:['masaladi','falali']}
+        const rdpc1 = deepCloneBase(dpc1)
+        rdpc1.name='jun'
+        rdpc1.food.meat='beef'
+        rdpc1.wife.name='where'
+        rdpc1.cars.push('benchi')
+        console.log('source obj:',dpc1)
+        console.log('result obj:',rdpc1)
+    </script>
 </body>
 </html>
